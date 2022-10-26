@@ -46,8 +46,6 @@ function throttle(func, wait, options) {
 
 
 
-
-
 /*************************************************************************************************/
 /*  Video playback                                                                              */
 /*************************************************************************************************/
@@ -84,12 +82,29 @@ function updateBuffered() {
 function setVideoTime(x) {
     const video = document.querySelector("#video");
     let t = video.duration * x;
-    // video.pause();
-    // console.log(t.toString());
-    // video.currentTime = t.toString();
-    video.fastSeek(t);
-    // video.play();
+    video.currentTime = t.toString();
 };
+
+
+
+/*************************************************************************************************/
+/*  Callbacks                                                                                    */
+/*************************************************************************************************/
+
+function playPause(ev) {
+    const video = document.querySelector("#video");
+    video.paused ? video.play() : video.pause();
+}
+
+
+
+function videoChanged(ev) {
+    const selector = document.querySelector("#selector");
+
+    const video = document.querySelector("#video");
+    video.src = "videos/" + selector.value;
+}
+
 
 
 

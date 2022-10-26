@@ -10,12 +10,21 @@
 
     <video id="video">
         <!-- <source src="https://ibl.flatironinstitute.org/resources/raw_data_test.mp4" type="video/mp4"> -->
-        <source src="raw_data_test.mp4" type="video/mp4">
+        <source src="videos/raw_data_test.mp4" type="video/mp4">
     </video>
 
     <div id="control">
         <canvas id="canvas"></canvas>
         <div id="bar"></div>
+    </div>
+
+    <div id="buttons">
+        <button onclick="playPause();">Play/Pause</button>
+        <select id="selector" onchange="videoChanged();">
+            <option value="raw_data_test.mp4" selected>raw_data_test.mp4</option>
+            <option value="raw_data_test_bit_rate.webm">raw_data_test_bit_rate.webm</option>
+            <option value="raw_ephys_crf30.mp4">raw_ephys_crf30.mp4</option>
+        </select>
     </div>
 
 </body>
